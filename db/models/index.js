@@ -17,6 +17,12 @@ const app = require('APP')
       User: require('./user'),
       Thing: require('./thing'),
       Favorite: require('./favorite'),
+      Movie: require('./movie'),
+      Actor: require('./actor'),
+      Director: require('./director'),
+      Movie_director: require('./movie_director'),
+      Movie_genre: require('./movie_genre'),
+      Role: require('./role'),
       // ---------- Add new models here ----------
     }
     , {mapValues} = require('lodash')
