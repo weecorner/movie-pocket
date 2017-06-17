@@ -10,12 +10,12 @@ module.exports = db => db.define('actors', {
     primaryKey: true,
   },
 
-  first_ame: {
+  first_name: {
     type: STRING,
     defaultValue: null,
   },
 
-  last_ame: {
+  last_name: {
     type: STRING,
     defaultValue: null,
   },

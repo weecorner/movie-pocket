@@ -24,6 +24,24 @@ module.exports = db => db.define('movies', {
     type: FLOAT,
     defaultValue: null,
   }
+}, {
+  scopes: {
+    populated: () => ({
+      include: [{
+        model: db.model('roles'), include: [db.model('actors')]
+      }]
+    }),
+    genre: () => ({
+      include: [{
+        model: db.model('movies_genres')
+      }]
+    }),
+    director: () => ({
+      include: [{
+        model: db.model('movies_directors'), include: [db.model('directors')]
+      }]
+    })
+  }
 })
 
 module.exports.associations = (Movie, {Actor, Role, Director, Movie_director, Movie_genre}) => {

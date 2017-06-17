@@ -23,6 +23,8 @@ const app = require('APP')
       Movie_director: require('./movie_director'),
       Movie_genre: require('./movie_genre'),
       Role: require('./role'),
+      Watch_list: require('./watch_list'),
+      Watched_movie: require('./watched_movie')
       // ---------- Add new models here ----------
     }
     , {mapValues} = require('lodash')
