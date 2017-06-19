@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import MoviesContainer from './containers/MoviesContainer'
 import MovieContainer from './containers/MovieContainer'
 import GenreContainer from './containers/GenreContainer'
+import UserContainer from './containers/UserContainer'
 import WatchListsContainer from './containers/WatchListsContainer'
 import WatchedMoviesContainer from './containers/WatchedMoviesContainer'
 import axios from 'axios'
@@ -85,6 +86,7 @@ render(
         <Route path='/genres/:genreName' component={GenreContainer} onEnter={onGenreEnter}/>
         <Route path='/watch-list' component={WatchListsContainer} />
         <Route path='/watched-movies' component={WatchedMoviesContainer} />
+        <Route path='/user' component={UserContainer} />
       </Route>
       <Route path='*' component={NotFound} />
     </Router>

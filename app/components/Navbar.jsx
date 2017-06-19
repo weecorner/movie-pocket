@@ -24,8 +24,8 @@ export default function AppNavbar(props) {
   return (
     <Navbar>
     <Navbar.Header>
-      <Navbar.Brand style={styles.title}>
-        <a href="#"><Link to={`/`}>MoNote</Link></a>
+      <Navbar.Brand >
+        <a href="#" style={styles.title}><Link to={`/`}>Movie Pocket</Link></a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
