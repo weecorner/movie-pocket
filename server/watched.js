@@ -10,7 +10,7 @@ const {mustBeLoggedIn, forbidden, selfOnly} = require('./auth.filters')
 module.exports = require('express').Router()
   .get('/',
     (req, res, next) =>
-      WatchedMovie.findAll()
+      WatchedMovie.findAll({include: [{all: true}]})
         .then(movies => res.json(movies))
         .catch(next))
 
@@ -32,20 +32,26 @@ module.exports = require('express').Router()
       .catch(next)
     )
 
-  .get('/:user/:id',
+  .get('/:userId/:movieId',
     (req, res, next) =>
-    WatchedMovie.findById(req.params.id)
+    WatchedMovie.findOne({
+      where: {
+        user_id: req.params.userId,
+        movie_id: req.params.movieId
+      }
+    })
     .then(movie =>res.json(movie))
     .catch(next))
 
-  .delete('/:user/:id',
+  .delete('/:userId/:movieId',
     (req, res, next) =>
     WatchedMovie.destroy({
       where: {
-        id: req.params.id
+        user_id: req.params.userId,
+        movie_id: req.params.movieId
       }
     })
-    .then((result) =>res.sendStatus(404))
+    .then(() =>res.send('Got a delte request'))
     .catch(next))
 
   

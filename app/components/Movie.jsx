@@ -2,11 +2,18 @@ import React from 'react'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 
+const styles = {
+  root: {
+    height: '30%',
+    width:'18%'
+  } 
+}
 
 
 export default function Movie (props) {
   const movie = props.selectedMovie
   const addOne = props.addOne
+  const addWatchedOne = props.addWatchedOne
   console.log(movie, "<<<<<<<<<<<<<")
 
   return (
@@ -19,7 +26,7 @@ export default function Movie (props) {
       <CardMedia
         overlay={<CardTitle title={movie.name} subtitle={movie.year} />}
       >
-        <img src={movie.image} alt="" />
+        <img src={movie.image} alt="" style={styles.root}/>
       </CardMedia>
       <CardTitle title={movie.name} subtitle={movie.year} />
       <CardText>
@@ -30,7 +37,7 @@ export default function Movie (props) {
       </CardText>
       <CardActions>
         <FlatButton label="Add To Watchlist" onClick = {()=> addOne(movie)}/>
-        <FlatButton label="Action2" />
+        <FlatButton label="Add To Watched Movies" onClick ={()=> addWatchedOne(movie)}/>
       </CardActions>
     </Card>
   )

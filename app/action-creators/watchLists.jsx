@@ -25,7 +25,20 @@ export const addNewMovie = movie => {
       .then(movie => {
         const newWatchLists = getState().watchLists.list.concat([movie])
         dispatch(receiveWatchLists(newWatchLists))
-        browserHistory.push('/watchList')
+        // browserHistory.push('/watch-list')
+      })
+  }
+}
+
+export const deleteMovie = movie => {
+  return (dispatch, getState) => {
+    const user = getState().auth
+    return axios.delete(`/api/watch-list/${user.id}/${movie.movie_id}`)
+      .then(()=> {
+        const watchLists = getState().watchLists.list
+        const newWatchLists = watchLists.filter(mv => {return (mv.movie_id !== movie.movie_id) || (mv.user_id !== movie.user_id)})
+        dispatch(receiveWatchLists(newWatchLists))
+        browserHistory.push('/watch-list')
       })
   }
 }

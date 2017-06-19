@@ -11,7 +11,7 @@ const {mustBeLoggedIn, forbidden, selfOnly} = require('./auth.filters')
 module.exports = require('express').Router()
   .get('/',
     (req, res, next) =>
-      WatchList.findAll()
+      WatchList.findAll({include: [{all: true}]})
         .then(movies => res.json(movies))
         .catch(next))
 
@@ -28,26 +28,31 @@ module.exports = require('express').Router()
 
   .post('/:userId',
     (req, res, next) =>
-    {console.log('userId is ...', req.params.userId)
     WatchList.create({user_id: req.params.userId, movie_id: req.body.movieId})
       .then(movie => res.status(201).json(movie))
-      .catch(next)}
+      .catch(next)
     )
 
-  .get('/:user/:id',
+  .get('/:userId/:movieId',
     (req, res, next) =>
-    WatchList.findById(req.params.id)
+    WatchList.findOne({
+      where: {
+        user_id: req.params.userId,
+        movie_id: req.params.movieId
+      }
+    })
     .then(movie =>res.json(movie))
     .catch(next))
 
-  .delete('/:user/:id',
+  .delete('/:userId/:movieId',
     (req, res, next) =>
     WatchList.destroy({
       where: {
-        id: req.params.id
+        user_id: req.params.userId,
+        movie_id: req.params.movieId
       }
     })
-    .then((result) =>res.sendStatus(404))
+    .then(() =>res.send('Got a delte request'))
     .catch(next))
 
   

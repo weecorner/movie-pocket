@@ -43,19 +43,19 @@ export const receiveWatchedMovies = watchedMovies => ({
 //   movie
 // })
 
-export const addNewMovie = movie => {
+export const addWatchedMovie = movie => {
   return (dispatch, getState) => {
     const user = getState().auth
     return axios.post(`/api/watched-movies/${user.id}`, {movieId: movie.id})
       .then(res => res.data)
       .then(movie => {
         const newWatchedMovies = getState().watchedMovies.list.concat([movie])
-        dispatch(receivewatchedMovies(newWatchedMovies))
+        dispatch(receiveWatchedMovies(newWatchedMovies))
       })
   }
 }
 
-export const deleteMovie = movie => {
+export const deleteWatchedMovie = movie => {
   return (dispatch, getState) => {
     //const selectedMovie = getState().watchedMovies.selectedMovie
     return axios.delete(`/api/watched-movies/${movie.id}`)

@@ -33,7 +33,7 @@ export default function Movies (props) {
             <GridTile
               key={tile.image}
               title={tile.name}
-              actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
+              actionIcon={<IconButton onTouchTap = {()=>addOne(tile)}><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
               titleStyle={styles.titleStyle}
               titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
             >

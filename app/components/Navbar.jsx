@@ -5,6 +5,18 @@ import WhoAmI from './WhoAmI'
 import GenreContainer from '../containers/GenreContainer'
 import {Navbar, Nav, NavDropdown, MenuItem} from 'react-bootstrap'
 
+const styles = {
+  logIn: {
+    display: 'inline-block',
+    padding: '15px',
+    color: 'rgb(0, 151, 167)'
+  },
+  title:{
+    fontFamily:'roboto',
+    fontWeight: 'bold'
+  }
+}
+
 export default function AppNavbar(props) {
   const user = props.user
   const movies = props.movies
@@ -12,24 +24,23 @@ export default function AppNavbar(props) {
   return (
     <Navbar>
     <Navbar.Header>
-      <Navbar.Brand>
-        <a href="#">Brand</a>
+      <Navbar.Brand style={styles.title}>
+        <a href="#"><Link to={`/`}>MoNote</Link></a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
-      <Navbar.Text>
-        Signed in as: <Navbar.Link href="#">Mark Otto</Navbar.Link>
-      </Navbar.Text>
-      <div>
+      <Nav>
+        <div style={styles.logIn}>
             <nav>
               {user ? <WhoAmI/> : <Login/>}
             </nav>
-      </div>
+        </div>
+      </Nav>
       <Nav>
         <NavDropdown eventKey={1} title="Dropdown" id="basic-nav-dropdown">
-          <MenuItem eventKey={1.1}><Link to={`/Comedy`}>Comedy</Link></MenuItem>
-          <MenuItem eventKey={2.2}><Link to={`/Horror`}>Horror</Link></MenuItem>
+          <MenuItem eventKey={1.1}><Link to={`/genres/Comedy`}>Comedy</Link></MenuItem>
+          <MenuItem eventKey={2.2}><Link to={`/genres/Horror`}>Horror</Link></MenuItem>
         </NavDropdown>
       </Nav>
       <Navbar.Text pullRight>
