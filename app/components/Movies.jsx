@@ -29,17 +29,17 @@ export default function Movies (props) {
     <div style={styles.root}>
       <GridList style={styles.gridList} cols={2.2} cellHeight={500}>
         {tilesData.map((tile) => (
-          <Link to={`/movies/${tile.id}`}>
+          
             <GridTile
               key={tile.image}
-              title={tile.name}
+              title={<Link to={`/movies/${tile.id}`}>{tile.name}</Link>}
               actionIcon={<IconButton onTouchTap = {()=>addOne(tile)}><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
               titleStyle={styles.titleStyle}
               titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
             >
               <img src={tile.image} />
             </GridTile>
-          </Link>
+          
         ))}
       </GridList>
     </div>

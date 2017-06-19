@@ -55,4 +55,18 @@ module.exports = require('express').Router()
     .then(() =>res.send('Got a delte request'))
     .catch(next))
 
+  // .put('/:userId/:movieId/watched',
+  //   (req, res, next) =>
+  //   WatchList.destroy({
+  //     where: {
+  //       user_id: req.params.userId,
+  //       movie_id: req.params.movieId
+  //     }
+  //   })
+  //   .then(()=>{
+  //     WatchedMovie.create({user_id: req.params.userId, movie_id: req.body.movieId})
+  //   })
+  //   .then(movie=>res.json(movie))
+  //   .catch(next)
+  //   )
   

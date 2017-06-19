@@ -13,19 +13,21 @@ const styles = {
     position: 'relative',
     width: '50%',
     padding: '15px',
-    display: 'inline-block'
-    }
+    display: 'inline-block',
+    },
+  
 }
 
 export default function User(props) {
 
   const user = props.user
   const watchLists = props.watchLists
-  const deleteOne = props.deleteOne
   const watchedMovies = props.watchedMovies
+  const deleteOne = props.deleteOne
   const deleteWatchedOne = props.deleteWatchedOne
   const addOne = props.addOne
   const addWatchedOne = props.addWatchedOne
+  
 
   return (
     <div>
@@ -35,11 +37,11 @@ export default function User(props) {
           <Subheader>Watchlist</Subheader>
 
           {
-            watchLists && watchLists.map(movie => (
+            watchLists && watchLists.map(movieToWatch => (
               <ListItem
-                primaryText={movie.movie.name}
-                leftAvatar={<Avatar src={movie.movie.image}/>}
-                rightIcon={<CommunicationChatBubble onClick = {()=> deleteOne(movie)} />}
+                primaryText={movieToWatch.movie.name}
+                leftAvatar={<Avatar src={movieToWatch.movie.image}/>}
+                rightIcon={<CommunicationChatBubble onClick = {()=> deleteOne(movieToWatch)} />}
               />
             ))
           }
@@ -50,11 +52,11 @@ export default function User(props) {
           <Subheader>Watched Movies</Subheader>
 
           {
-            watchedMovies && watchedMovies.map(movie => (
+            watchedMovies && watchedMovies.map(WatchedMovie => (
               <ListItem
-                primaryText={movie.movie.name}
-                leftAvatar={<Avatar src={movie.movie.image}/>}
-                rightIcon={<CommunicationChatBubble onClick = {()=> deleteOne(movie)} />}
+                primaryText={WatchedMovie.movie.name}
+                leftAvatar={<Avatar src={WatchedMovie.movie.image}/>}
+                rightIcon={<CommunicationChatBubble onClick = {()=> deleteWatchedOne(WatchedMovie)} />}
               />
             ))
           }

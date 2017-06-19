@@ -5,8 +5,8 @@ import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigati
 import Paper from 'material-ui/Paper';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 
-const recentsIcon = <FontIcon className="material-icons"><Link to={`/watch-list`}>Watchlist</Link></FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons"><Link to={`/watched-movies`}>WatchedMovies</Link></FontIcon>;
+const recentsIcon = <FontIcon className="material-icons"><Link to={`/watch-list`}>WATCTLIST</Link></FontIcon>;
+const favoritesIcon = <FontIcon className="material-icons"><Link to={`/watched-movies`}>WATCHEDMOVIES</Link></FontIcon>;
 const nearbyIcon = <IconLocationOn />;
 
 /**

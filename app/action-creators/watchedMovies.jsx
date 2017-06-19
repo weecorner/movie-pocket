@@ -37,7 +37,7 @@ export const deleteWatchedMovie = movie => {
         const watchedMovies = getState().watchedMovies.list
         const newWatchedMovies = watchedMovies.filter(mv => {return (mv.movie_id !== movie.movie_id) || (mv.user_id !== movie.user_id)})
         dispatch(receiveWatchedMovies(newWatchedMovies))
-        hashHistory.push('/watched-movies')
+        // browserHistory.push('/watched-movies')
       })
   }
 }

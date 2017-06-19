@@ -38,7 +38,23 @@ export const deleteMovie = movie => {
         const watchLists = getState().watchLists.list
         const newWatchLists = watchLists.filter(mv => {return (mv.movie_id !== movie.movie_id) || (mv.user_id !== movie.user_id)})
         dispatch(receiveWatchLists(newWatchLists))
-        browserHistory.push('/watch-list')
+        // browserHistory.push('/watch-list')
       })
   }
 }
+
+//Trying to write toggle action
+
+// export const moveToWatched = movie=> {
+//   return (dispatch, getState) =>{
+//     const user = getState().auth
+//     return axios.put(`/api/watch-list/${user.id}/${movie.movie_id}/watched`)
+//       .then(()=>{
+//         const watchLists = getState().watchLists.list
+//         const newWatchLists = watchLists.filter(mv => {return (mv.movie_id !== movie.movie_id) || (mv.user_id !== movie.user_id)})
+//         const newWatchedMovies = getState().watchedMovies.list.concat([movie])
+//         dispatch(receiveWatchedMovies(newWatchedMovies))
+//         dispatch(receiveWatchLists(newWatchLists))
+//       }
+//   }
+// }
