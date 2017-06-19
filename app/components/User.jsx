@@ -10,7 +10,15 @@ import {Row} from 'react-bootstrap'
 
 const styles = {
   col6: {
-    position: 'relative',
+    position: 'fixed',
+    left:'0',
+    width: '50%',
+    padding: '15px',
+    display: 'inline-block',
+    },
+  col6right: {
+    position: 'fixed',
+    right:'0',
     width: '50%',
     padding: '15px',
     display: 'inline-block',
@@ -47,7 +55,7 @@ export default function User(props) {
           }
         </List>
       </div>
-      <div style={styles.col6}>
+      <div style={styles.col6right}>
         <List>
           <Subheader>Watched Movies</Subheader>
 
