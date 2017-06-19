@@ -235,73 +235,85 @@ const movies = seed(Movie, {
     id: 10830,
     name: 'Alien',
     year: 1979,
-    rank: 8.3
+    rank: 8.3,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNDNhN2IxZWItNGEwYS00ZDNhLThiM2UtODU3NWJlZjBkYjQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,681,1000_AL_.jpg'
   },
   psycho: {
     id: 266574,
     name: 'Psycho',
     year: 1960,
-    rank: 8.6
+    rank: 8.6,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BOWQ0MjRmZmUtY2Q2Yi00ODcxLWE4NGMtMTNjMDY1YmUzMjVkXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_.jpg'
   },
   diabolique: {
     id: 85611,
     name: 'Diabolique',
     year: 1996,
-    rank: 5.0
+    rank: 5.0,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNmFmOWRkZWEtYWZlNC00MDQyLWFlODAtODdjNzU5MzY5ZGE3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,678,1000_AL_.jpg'
   },
-  nosferatn: {
+  nosferatu: {
     id: 235282,
-    name: 'Nosferatn',
+    name: 'Nosferatu',
     year: 1990,
-    rank: 5.8
+    rank: 5.8,
+    image: 'https://www.movieposter.com/posters/archive/main/130/MPW-65215'
   },
   halloween: {
     id: 137655,
     name: 'Halloween',
     year: 1978,
-    rank: 7.6
+    rank: 7.6,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNzk1OGU2NmMtNTdhZC00NjdlLWE5YTMtZTQ0MGExZTQzOGQyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg'
   },
   frankenstein: {
     id: 118916,
     name: 'Frankenstein',
     year: 1931,
-    rank: 7.9
+    rank: 7.9,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ0Njc1MjM0OF5BMl5BanBnXkFtZTgwNTY2NTUyMjE@._V1_SY1000_CR0,0,668,1000_AL_.jpg'
   },
   saw: {
     id: 289167,
     name: 'Saw',
     year: 2004,
-    rank: 7.3
+    rank: 7.3,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjE4MDYzNDE1OV5BMl5BanBnXkFtZTcwNDY2OTYwNA@@._V1_SY1000_SX675_AL_.jpg'
   },
   sholay: {
     id: 299603,
     name: 'Sholay',
     year: 1975,
-    rank: 7.4
+    rank: 7.4,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BOWQ0YTUzYzItYjI0MC00OTZmLWE1MWQtY2EzMzU2MTlmMmJjXkEyXkFqcGdeQXVyMDkwNTkwNg@@._V1_.jpg'
   },
   underground: {
     id: 346269,
     name: 'Underground',
     year: 1995,
-    rank: 7.8
+    rank: 7.8,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMjI0MzY4MV5BMl5BanBnXkFtZTcwMzYxMzQyMQ@@._V1_.jpg'
   },
   manhattan: {
     id: 204163,
     name: 'Manhattan',
     year: 1979,
-    rank: 8.2
+    rank: 8.2,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMzdmY2I3MmEtOGFiZi00MTg1LWIxY2QtNWUwM2NmNWNlY2U5XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_CR0,0,666,1000_AL_.jpg'
   },
   charade: {
     id: 59411,
     name: 'Charade',
     year: 1963,
-    rank: 8.1
+    rank: 8.1,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0Y2UyMDUtZGZiOS00ZmVkLTg3NmItODQyNTY1ZjU1MWE4L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SY1000_CR0,0,653,1000_AL_.jpg'
   },
   harvey: {
     id: 139786,
     name: 'Harvey',
     year: 1950,
-    rank: 8.1
+    rank: 8.1,
+    image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMzg2YTFkNjgtM2ZkNS00MWVkLWIwMTEtZTgzMDM2MmUxNDE2XkEyXkFqcGdeQXVyMjI4MjA5MzA@._V1_SY1000_CR0,0,672,1000_AL_.jpg'
   },
 })
 

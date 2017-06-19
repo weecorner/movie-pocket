@@ -7,7 +7,8 @@ api
   .use('/auth', require('./auth'))
   .use('/users', require('./users'))
   .use('/movies', require('./movies'))
-  .use('/watch-lists', require('./watch-lists'))
+  .use('/watch-list', require('./watch-list'))
+  .use('/watched-movies', require('./watched'))
 
 // No routes matched? 404.
 api.use((req, res) => res.status(404).end())

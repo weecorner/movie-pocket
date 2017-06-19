@@ -23,6 +23,16 @@ export default class BonesJokes extends Component {
         <h1>{joke.q}</h1>
         {answered && <h2>{joke.a}</h2>}
         <cite>~xoxo, bones</cite>
+        <a
+        href="#"
+        onClick={function(e) {
+          console.log("click", e);
+        }}
+        onTouchTap={function(e) {
+          console.log("touchTap", e);
+        }}>
+        Tap Me
+      </a>
       </div>
     )
   }

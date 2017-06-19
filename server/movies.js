@@ -15,24 +15,21 @@ module.exports = require('express').Router()
         .then(movies => res.json(movies))
         .catch(next))
 
-  .get('/:genre',
-    (req, res, next) =>
+  .get('/genres/:genre',
+    (req, res, next) =>{
       Movie.findAll({include: [{model: MovieGenre, where: {
         genre: {$like: req.params.genre}
       }}]})
       .then(movies => res.json(movies))
-      .catch(next)
+      .catch(next)}
     )
 
-  .get('/:name',
-    (req, res, next) =>
-      Movie.findOne({
-        where: {
-          name: req.params.name
-        },
-        include: [{all: true}]
-      })
-      .then(movie => res.json(movie))
-      .catch(next)
-    )
+  .get('/:id', 
+      (req, res, next) =>{
+      Movie.findOne({include: [{all: true}], where: {id: req.params.id}})
+        .then(movie => res.json(movie))
+        .catch(next)})
+
+
+  
   
